@@ -27,7 +27,7 @@
          image: "{{ image }}"
          wait: true
          region: "{{ region }}"
-         vpc_subnet_id: subnet-02a17e56e6827124a
+         vpc_subnet_id: subnet-41aff00d
          assign_public_ip: yes
          instance_tags: "{{tagname}}"
       register: ec2
