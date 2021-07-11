@@ -35,7 +35,7 @@ RUN pip install virtualenv
 RUN pip install safety
 RUN pip install liccheck
 #Install the git history checker for secrets
-RUN pip install trufflehog
+#RUN pip install trufflehog
 #Install python SAST tool
 RUN pip install bandit
 
