@@ -30,7 +30,6 @@ RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-updates mult
 RUN apt-get update -y
 RUN apt-get install -y nikto	
 #Install virtualenv to isolate each project dependencies
-RUN python3 -m pip install --upgrade pip
 RUN pip install virtualenv
 #Install python SCA tool/dependency checker, license check
 RUN pip install safety
