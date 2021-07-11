@@ -31,22 +31,22 @@ RUN apt-get update -y
 RUN apt-get install -y nikto	
 	
 #Install virtualenv to isolate each project dependencies
-RUN pip install virtualenv
+RUN pip3 install virtualenv
 #Install python SCA tool/dependency checker, license check
-RUN pip install safety
-RUN pip install liccheck
+RUN pip3 install safety
+RUN pip3 install liccheck
 #Install the git history checker for secrets
-RUN pip install trufflehog
+RUN pip3 install trufflehog
 #Install python SAST tool
-RUN pip install bandit
+RUN pip3 install bandit
 
 # Used for authenticated DAST scan
-RUN pip install selenium
+RUN pip3 install selenium
 
 #install the orchestration tool, boto for ec2 module, some lib upgrade under requests
-RUN pip install ansible
-RUN pip install boto 
-RUN pip install boto3
+RUN pip3 install ansible
+RUN pip3 install boto 
+RUN pip3 install boto3
 
 # configure ansible to use right keys and not check host auth for this ephemeral/temp aws host
 # Not authenticating existing/long-term hosts requiring relogins may lead to mitm.. be careful
