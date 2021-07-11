@@ -19,8 +19,8 @@ export Jenkins_PW=$(openssl rand -base64 16)
 export JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
 #we're providing the server its public hostname for its relative links
-export JenkinsPublicHostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
-export SeleniumPrivateIp=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
+export JenkinsPublicHostname=$(curl -s http://35.154.35.149/latest/meta-data/public-hostname)
+export SeleniumPrivateIp=$(curl -s http://35.154.35.149/latest/meta-data/local-ipv4)
 #build the jenkins container
 docker-compose up -d --build
 
@@ -28,7 +28,7 @@ docker-compose up -d --build
 sleep 45
 
 #create new environment without inheriting anything from this shell for this wget to work..
-env -i /bin/bash -c 'wget http://127.0.0.1:8080/jnlpJars/jenkins-cli.jar'
+env -i /bin/bash -c 'wget http://35.154.35.149:8080/jnlpJars/jenkins-cli.jar'
 
 sleep 5
 #create the pipeline in jenkins
