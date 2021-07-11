@@ -31,7 +31,7 @@ RUN apt-get update -y
 RUN apt-get install -y nikto	
 #Install virtualenv to isolate each project dependencies
 RUN pip install virtualenv
-#Install python SCA tool/dependency checker, license check
+##Install python SCA tool/dependency checker, license check
 RUN pip install safety
 RUN pip install liccheck
 #Install the git history checker for secrets
