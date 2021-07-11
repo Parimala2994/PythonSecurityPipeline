@@ -29,6 +29,7 @@ RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-updates mult
 
 RUN apt-get update -y
 RUN apt-get install -y nikto	
+sudo su
 	
 #Install virtualenv to isolate each project dependencies
 RUN pip3 install virtualenv
