@@ -7,7 +7,7 @@
   vars:
     keyname: psp_ansible_key
     instance_type: t2.micro
-    security_group: launch-wizard-1
+    security_group: sg-05ff7dd98d14576d6
     image: ami-0be057a22c63962cb
     region: eu-west-2
     tagname: Name=TestServer
