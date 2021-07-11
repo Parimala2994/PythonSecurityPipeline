@@ -29,25 +29,23 @@ RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-updates mult
 
 RUN apt-get update -y
 RUN apt-get install -y nikto	
-RUN sudo su
-	
 #Install virtualenv to isolate each project dependencies
-RUN pip3 install virtualenv
+RUN pip install virtualenv
 #Install python SCA tool/dependency checker, license check
-RUN pip3 install safety
-RUN pip3 install liccheck
+RUN pip install safety
+RUN pip install liccheck
 #Install the git history checker for secrets
-RUN pip3 install trufflehog
+RUN pip install trufflehog
 #Install python SAST tool
-RUN pip3 install bandit
+RUN pip install bandit
 
 # Used for authenticated DAST scan
-RUN pip3 install selenium
+RUN pip install selenium
 
 #install the orchestration tool, boto for ec2 module, some lib upgrade under requests
-RUN pip3 install ansible
-RUN pip3 install boto 
-RUN pip3 install boto3
+RUN pip install ansible
+RUN pip install boto 
+RUN pip install boto3
 
 # configure ansible to use right keys and not check host auth for this ephemeral/temp aws host
 # Not authenticating existing/long-term hosts requiring relogins may lead to mitm.. be careful
